@@ -1,7 +1,6 @@
 /* 
    EXECUTIVE MIDNIGHT SLATE PORTFOLIO DRIVER
    Developer: Ashok Gowda S P
-   Updated with Latest Resume (Bengaluru House Price ML Platform, PostgreSQL, RAG Fundamentals)
 */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -14,10 +13,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // 3. Dynamic Multi-Project Architecture Modals
   initArchitectureModals();
 
-  // 4. Contact Form Validation
+  // 4. Resume Viewer Modal System
+  initResumeModal();
+
+  // 5. Contact Form Validation
   initContactForm();
 
-  // 5. Active Nav Highlight on Scroll
+  // 6. Active Nav Highlight on Scroll
   initActiveNav();
 });
 
@@ -62,6 +64,30 @@ function initTechTabs() {
   });
 }
 
+/* RESUME VIEWER MODAL SYSTEM */
+function initResumeModal() {
+  const overlay = document.getElementById('resume-modal-overlay');
+  const closeBtn = document.getElementById('resume-modal-close');
+
+  if (!overlay) return;
+
+  document.querySelectorAll('.trigger-resume-modal').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      // Open modal viewer on click
+      e.preventDefault();
+      overlay.classList.add('active');
+    });
+  });
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => overlay.classList.remove('active'));
+  }
+
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) overlay.classList.remove('active');
+  });
+}
+
 /* DYNAMIC ARCHITECTURE MODAL SYSTEM */
 function initArchitectureModals() {
   const overlay = document.getElementById('arch-modal-overlay');
@@ -72,7 +98,6 @@ function initArchitectureModals() {
 
   if (!overlay) return;
 
-  // Data for architecture breakdowns based on Ashok's updated resume
   const architectureData = {
     'jwt-auth-system': {
       title: 'Spring Boot REST API with JWT Auth & DTO Mapping',
@@ -113,7 +138,7 @@ function initArchitectureModals() {
     },
     'bengaluru-house-price': {
       title: 'Bengaluru House Price Prediction Infrastructure Platform',
-      desc: 'End-to-end ML-powered real estate valuation platform across 240+ Bengaluru locations with dual-currency conversion, 20-year EMI loan calculators, public infrastructure mapping, and a Meta AI chatbot.',
+      desc: 'End-to-end ML-powered real estate valuation platform across 240+ Bengaluru locations with dual-currency conversion, 20-year loan EMI calculators, public infrastructure mapping, and a Meta AI chatbot.',
       content: `
         <div style="background:#020617; border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:1.5rem; font-family:var(--font-code); font-size:0.88rem; color:var(--text-primary); line-height:2;">
           <div style="color:var(--accent-cyan); font-weight:700;"><i class="fas fa-brain"></i> 1. MACHINE LEARNING MODEL (Scikit-Learn / Linear Regression)</div>
