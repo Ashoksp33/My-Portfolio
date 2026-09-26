@@ -1,6 +1,7 @@
 /* 
    EXECUTIVE MIDNIGHT SLATE PORTFOLIO DRIVER
    Developer: Ashok Gowda S P
+   Resume Sync: Employee Management JWT, SkyCast Weather, Stock Price ML
 */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -13,13 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // 3. Dynamic Multi-Project Architecture Modals
   initArchitectureModals();
 
-  // 4. Resume Viewer Modal System
-  initResumeModal();
-
-  // 5. Contact Form Validation
+  // 4. Contact Form Validation
   initContactForm();
 
-  // 6. Active Nav Highlight on Scroll
+  // 5. Active Nav Highlight on Scroll
   initActiveNav();
 });
 
@@ -64,30 +62,6 @@ function initTechTabs() {
   });
 }
 
-/* RESUME VIEWER MODAL SYSTEM */
-function initResumeModal() {
-  const overlay = document.getElementById('resume-modal-overlay');
-  const closeBtn = document.getElementById('resume-modal-close');
-
-  if (!overlay) return;
-
-  document.querySelectorAll('.trigger-resume-modal').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      // Open modal viewer on click
-      e.preventDefault();
-      overlay.classList.add('active');
-    });
-  });
-
-  if (closeBtn) {
-    closeBtn.addEventListener('click', () => overlay.classList.remove('active'));
-  }
-
-  overlay.addEventListener('click', (e) => {
-    if (e.target === overlay) overlay.classList.remove('active');
-  });
-}
-
 /* DYNAMIC ARCHITECTURE MODAL SYSTEM */
 function initArchitectureModals() {
   const overlay = document.getElementById('arch-modal-overlay');
@@ -100,110 +74,93 @@ function initArchitectureModals() {
 
   const architectureData = {
     'jwt-auth-system': {
-      title: 'Spring Boot REST API with JWT Auth & DTO Mapping',
-      desc: 'Secure enterprise microservice using Spring Security, JWT token validation, DTO pattern mapping, Swagger OpenAPI documentation, pagination, sorting, input validation, and global exception handling.',
+      title: 'Employee Management System with JWT Authentication',
+      desc: 'Developed a secure Employee Management System with role-based authentication using JWT, enabling authorized users to perform CRUD operations through RESTful APIs. Implemented pagination, sorting, searching, input validation, global exception handling, and API documentation using Swagger.',
       content: `
         <div style="background:#020617; border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:1.5rem; font-family:var(--font-code); font-size:0.88rem; color:var(--text-primary); line-height:2;">
           <div style="color:var(--accent-cyan); font-weight:700;"><i class="fas fa-key"></i> 1. CLIENT AUTHENTICATION & JWT BEARER TOKEN</div>
           <div style="padding-left:1.5rem; color:var(--text-secondary); font-size:0.82rem;">
             • Client authenticates via /api/auth/login and receives signed JWT Bearer Token<br>
-            • Subsequent requests pass Authorization: Bearer &lt;token&gt; header
+            • Subsequent requests pass Authorization: Bearer &lt;token&gt; header for authorized CRUD execution
           </div>
 
           <div style="padding-left:1.5rem; color:var(--text-muted);">↓ Intercepted by Spring Security Filter Chain</div>
 
-          <div style="color:var(--accent-indigo); font-weight:700;"><i class="fas fa-shield-halved"></i> 2. SPRING SECURITY FILTER CHAIN & DTO MAPPING</div>
+          <div style="color:var(--accent-indigo); font-weight:700;"><i class="fas fa-shield-halved"></i> 2. SPRING SECURITY & ROLE-BASED AUTHORIZATION</div>
           <div style="padding-left:1.5rem; color:var(--text-secondary); font-size:0.82rem;">
-            • Validates token signature & extracts User Claims & Roles<br>
+            • Validates token signature & enforces Role-Based Access Control (RBAC)<br>
             • DTO Layer separates internal JPA entities from public JSON API contracts
           </div>
 
-          <div style="padding-left:1.5rem; color:var(--text-muted);">↓ Passes to Endpoints with OpenAPI Documentation</div>
+          <div style="padding-left:1.5rem; color:var(--text-muted);">↓ REST Controller Layer Execution</div>
 
-          <div style="color:var(--accent-emerald); font-weight:700;"><i class="fas fa-layer-group"></i> 3. REST CONTROLLER LAYER & SWAGGER UI</div>
+          <div style="color:var(--accent-emerald); font-weight:700;"><i class="fas fa-layer-group"></i> 3. REST API ENDPOINTS & SWAGGER (OPENAPI)</div>
           <div style="padding-left:1.5rem; color:var(--text-secondary); font-size:0.82rem;">
-            • Implements Pagination, Sorting, Searching, and Input Validation (@Valid)<br>
-            • Interactive API Documentation exposed via Swagger / OpenAPI 3.0
+            • Implements Pagination, Sorting, Searching, Input Validation (@Valid), and Global Exception Handling<br>
+            • Interactive API Documentation exposed via Swagger / OpenAPI
           </div>
 
-          <div style="padding-left:1.5rem; color:var(--text-muted);">↓ Calls Service Layer & Database</div>
+          <div style="padding-left:1.5rem; color:var(--text-muted);">↓ Database Layer</div>
 
-          <div style="color:var(--accent-amber); font-weight:700;"><i class="fas fa-database"></i> 4. DATA ACCESS LAYER & MYSQL DATABASE</div>
+          <div style="color:var(--accent-amber); font-weight:700;"><i class="fas fa-database"></i> 4. SPRING DATA JPA & MYSQL DATABASE</div>
           <div style="padding-left:1.5rem; color:var(--text-secondary); font-size:0.82rem;">
             • Spring Data JPA & Hibernate ORM for CRUD Operations & Pageable queries<br>
-            • Persists encrypted user credentials & role mappings to MySQL DB
+            • Persists employee records & role mappings to MySQL Database
           </div>
         </div>
       `
     },
-    'bengaluru-house-price': {
-      title: 'Bengaluru House Price Prediction Infrastructure Platform',
-      desc: 'End-to-end ML-powered real estate valuation platform across 240+ Bengaluru locations with dual-currency conversion, 20-year loan EMI calculators, public infrastructure mapping, and a Meta AI chatbot.',
+    'skycast': {
+      title: 'SkyCast – Real-Time Weather Forecasting Platform',
+      desc: 'Developed a responsive weather forecasting web application that fetches real-time weather data using REST APIs and displays weather conditions for any city. Implemented dynamic weather-based animations, geolocation support, responsive UI, and interactive themes using HTML, CSS, and JavaScript.',
       content: `
         <div style="background:#020617; border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:1.5rem; font-family:var(--font-code); font-size:0.88rem; color:var(--text-primary); line-height:2;">
-          <div style="color:var(--accent-cyan); font-weight:700;"><i class="fas fa-brain"></i> 1. MACHINE LEARNING MODEL (Scikit-Learn / Linear Regression)</div>
+          <div style="color:var(--accent-cyan); font-weight:700;"><i class="fas fa-location-crosshairs"></i> 1. GEOLOCATION & CITY SEARCH INGESTION</div>
           <div style="padding-left:1.5rem; color:var(--text-secondary); font-size:0.82rem;">
-            • Trained on 240+ Bengaluru location features, sqft area, BHK, and bath parameters<br>
-            • Model pickled with Joblib/Pickle for low-latency Flask inference
+            • Obtains real-time user GPS coordinates via Browser Geolocation API or manual city input
           </div>
 
-          <div style="padding-left:1.5rem; color:var(--text-muted);">↓ Microservice Endpoint Trigger</div>
+          <div style="padding-left:1.5rem; color:var(--text-muted);">↓ Async REST API Request</div>
 
-          <div style="color:var(--accent-indigo); font-weight:700;"><i class="fas fa-server"></i> 2. FLASK RESTFUL API & AUTHENTICATION</div>
+          <div style="color:var(--accent-indigo); font-weight:700;"><i class="fas fa-cloud-sun-rain"></i> 2. WEATHERAPI REST ENDPOINT INTEGRATION</div>
           <div style="padding-left:1.5rem; color:var(--text-secondary); font-size:0.82rem;">
-            • /predict_home_price API returning real-time property valuation<br>
-            • Secure Session & SQLite User Authentication for saved valuation history
+            • Fetches live weather metrics, temperature, humidity, wind speed, and 7-day forecast JSON data
           </div>
 
-          <div style="padding-left:1.5rem; color:var(--text-muted);">↓ Financial & Infra Analytics Pipelines</div>
+          <div style="padding-left:1.5rem; color:var(--text-muted);">↓ Dynamic UI Rendering Engine</div>
 
-          <div style="color:var(--accent-emerald); font-weight:700;"><i class="fas fa-calculator"></i> 3. DUAL-CURRENCY (INR/USD) & 20-YR LOAN EMI ENGINE</div>
+          <div style="color:var(--accent-emerald); font-weight:700;"><i class="fas fa-paint-brush"></i> 3. DYNAMIC WEATHER ANIMATIONS & THEMING</div>
           <div style="padding-left:1.5rem; color:var(--text-secondary); font-size:0.82rem;">
-            • Real-time exchange rate conversion (INR ⇄ USD)<br>
-            • Dynamic 20-year loan amortization schedule & EMI breakdown
-          </div>
-
-          <div style="padding-left:1.5rem; color:var(--text-muted);">↓ Infrastructure & Chatbot Modules</div>
-
-          <div style="color:var(--accent-amber); font-weight:700;"><i class="fas fa-robot"></i> 4. PUBLIC INFRASTRUCTURE MAPPING & META AI CHATBOT</div>
-          <div style="padding-left:1.5rem; color:var(--text-secondary); font-size:0.82rem;">
-            • Maps nearest Hospitals, Namma Metro Stations, BMTC Bus Stops, and BLR Airport<br>
-            • WhatsApp-style Meta AI Assistant chatbot for real estate query resolution
+            • Triggers live CSS3/JS weather background animations (Rain, Thunder, Sunshine, Snow)<br>
+            • Real-time responsive UI state updates & interactive theme management
           </div>
         </div>
       `
     },
     'stock-prediction': {
       title: 'Stock Market Price Prediction Machine Learning Pipeline',
-      desc: 'End-to-end Deep Learning pipeline using LSTM networks for time-series stock trend forecasting served via Flask.',
+      desc: 'Visualized historical stock market trends and predicted future prices using LSTM-based deep learning models. Implemented data preprocessing, feature engineering, and normalization techniques for improved prediction accuracy.',
       content: `
         <div style="background:#020617; border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:1.5rem; font-family:var(--font-code); font-size:0.88rem; color:var(--text-primary); line-height:2;">
-          <div style="color:var(--accent-cyan); font-weight:700;"><i class="fas fa-file-csv"></i> 1. HISTORICAL DATA INGESTION</div>
+          <div style="color:var(--accent-cyan); font-weight:700;"><i class="fas fa-chart-line"></i> 1. HISTORICAL STOCK DATA INGESTION</div>
           <div style="padding-left:1.5rem; color:var(--text-secondary); font-size:0.82rem;">
-            • Ingests Stock Price Time-Series Data via Yahoo Finance API / Pandas
+            • Ingests time-series equity price data into Pandas DataFrames
           </div>
 
-          <div style="padding-left:1.5rem; color:var(--text-muted);">↓ Data Preprocessing & Feature Engineering</div>
+          <div style="padding-left:1.5rem; color:var(--text-muted);">↓ Preprocessing & Feature Engineering</div>
 
-          <div style="color:var(--accent-indigo); font-weight:700;"><i class="fas fa-filter"></i> 2. NORMALIZATION & SEQUENCE SLICING</div>
+          <div style="color:var(--accent-indigo); font-weight:700;"><i class="fas fa-filter"></i> 2. DATA NORMALIZATION & SLICING</div>
           <div style="padding-left:1.5rem; color:var(--text-secondary); font-size:0.82rem;">
-            • MinMaxScaler Normalization (0 to 1 Scaling)<br>
-            • Sliding Window Sequence Creation (60-day Lookback Window)
+            • Normalizes data scaling using MinMaxScaler<br>
+            • Feature engineering & sequence slicing for time-series memory model
           </div>
 
-          <div style="padding-left:1.5rem; color:var(--text-muted);">↓ Passes Sequences into LSTM Neural Net</div>
+          <div style="padding-left:1.5rem; color:var(--text-muted);">↓ Model Prediction Execution</div>
 
-          <div style="color:var(--accent-emerald); font-weight:700;"><i class="fas fa-brain"></i> 3. LSTM DEEP LEARNING MODEL</div>
+          <div style="color:var(--accent-emerald); font-weight:700;"><i class="fas fa-brain"></i> 3. LSTM RECURRENT NEURAL NETWORK</div>
           <div style="padding-left:1.5rem; color:var(--text-secondary); font-size:0.82rem;">
-            • Multi-layered LSTM Recurrent Neural Network with Dropout Layers<br>
-            • Trained on Historical Patterns to Forecast Equity Trends
-          </div>
-
-          <div style="padding-left:1.5rem; color:var(--text-muted);">↓ Model Forecast Output</div>
-
-          <div style="color:var(--accent-amber); font-weight:700;"><i class="fas fa-chart-line"></i> 4. FLASK REST SERVICE & VISUALIZATION</div>
-          <div style="padding-left:1.5rem; color:var(--text-secondary); font-size:0.82rem;">
-            • Exposes Prediction Endpoint & Renders Interactive Forecast Charts
+            • Trains LSTM deep learning network to predict future price trends with high accuracy<br>
+            • Serves predictions via Flask web microservice
           </div>
         </div>
       `
