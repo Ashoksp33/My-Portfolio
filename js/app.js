@@ -1,7 +1,7 @@
 /* 
    EXECUTIVE MIDNIGHT SLATE PORTFOLIO DRIVER
    Developer: Ashok Gowda S P
-   Updated with New Resume Details (JWT Auth, SkyCast, Stock Prediction)
+   Updated with Latest Resume (Bengaluru House Price ML Platform, PostgreSQL, RAG Fundamentals)
 */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -75,8 +75,8 @@ function initArchitectureModals() {
   // Data for architecture breakdowns based on Ashok's updated resume
   const architectureData = {
     'jwt-auth-system': {
-      title: 'Spring Boot REST API with JWT Auth & Swagger Architecture',
-      desc: 'Secure enterprise microservice using Spring Security, JWT token validation, Swagger OpenAPI documentation, pagination, sorting, input validation, and global exception handling.',
+      title: 'Spring Boot REST API with JWT Auth & DTO Mapping',
+      desc: 'Secure enterprise microservice using Spring Security, JWT token validation, DTO pattern mapping, Swagger OpenAPI documentation, pagination, sorting, input validation, and global exception handling.',
       content: `
         <div style="background:#020617; border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:1.5rem; font-family:var(--font-code); font-size:0.88rem; color:var(--text-primary); line-height:2;">
           <div style="color:var(--accent-cyan); font-weight:700;"><i class="fas fa-key"></i> 1. CLIENT AUTHENTICATION & JWT BEARER TOKEN</div>
@@ -87,10 +87,10 @@ function initArchitectureModals() {
 
           <div style="padding-left:1.5rem; color:var(--text-muted);">↓ Intercepted by Spring Security Filter Chain</div>
 
-          <div style="color:var(--accent-indigo); font-weight:700;"><i class="fas fa-shield-halved"></i> 2. SPRING SECURITY FILTER CHAIN & JWT FILTER</div>
+          <div style="color:var(--accent-indigo); font-weight:700;"><i class="fas fa-shield-halved"></i> 2. SPRING SECURITY FILTER CHAIN & DTO MAPPING</div>
           <div style="padding-left:1.5rem; color:var(--text-secondary); font-size:0.82rem;">
             • Validates token signature & extracts User Claims & Roles<br>
-            • Populates SecurityContextHolder for Role-Based Access Control (RBAC)
+            • DTO Layer separates internal JPA entities from public JSON API contracts
           </div>
 
           <div style="padding-left:1.5rem; color:var(--text-muted);">↓ Passes to Endpoints with OpenAPI Documentation</div>
@@ -101,7 +101,7 @@ function initArchitectureModals() {
             • Interactive API Documentation exposed via Swagger / OpenAPI 3.0
           </div>
 
-          <div style="padding-left:1.5rem; color:var(--text-muted);">↓ Calls Service Layer</div>
+          <div style="padding-left:1.5rem; color:var(--text-muted);">↓ Calls Service Layer & Database</div>
 
           <div style="color:var(--accent-amber); font-weight:700;"><i class="fas fa-database"></i> 4. DATA ACCESS LAYER & MYSQL DATABASE</div>
           <div style="padding-left:1.5rem; color:var(--text-secondary); font-size:0.82rem;">
@@ -111,30 +111,39 @@ function initArchitectureModals() {
         </div>
       `
     },
-    'skycast': {
-      title: 'SkyCast — Real-Time Weather Platform Architecture',
-      desc: 'Asynchronous JavaScript web application leveraging WeatherAPI REST services, HTML5 Geolocation, dynamic CSS animations, and theme state management.',
+    'bengaluru-house-price': {
+      title: 'Bengaluru House Price Prediction Infrastructure Platform',
+      desc: 'End-to-end ML-powered real estate valuation platform across 240+ Bengaluru locations with dual-currency conversion, 20-year EMI loan calculators, public infrastructure mapping, and a Meta AI chatbot.',
       content: `
         <div style="background:#020617; border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:1.5rem; font-family:var(--font-code); font-size:0.88rem; color:var(--text-primary); line-height:2;">
-          <div style="color:var(--accent-cyan); font-weight:700;"><i class="fas fa-location-crosshairs"></i> 1. HTML5 GEOLOCATION & CITY SEARCH</div>
+          <div style="color:var(--accent-cyan); font-weight:700;"><i class="fas fa-brain"></i> 1. MACHINE LEARNING MODEL (Scikit-Learn / Linear Regression)</div>
           <div style="padding-left:1.5rem; color:var(--text-secondary); font-size:0.82rem;">
-            • Obtains user latitude/longitude or accepts dynamic city search input
+            • Trained on 240+ Bengaluru location features, sqft area, BHK, and bath parameters<br>
+            • Model pickled with Joblib/Pickle for low-latency Flask inference
           </div>
 
-          <div style="padding-left:1.5rem; color:var(--text-muted);">↓ Asynchronous Fetch API Request</div>
+          <div style="padding-left:1.5rem; color:var(--text-muted);">↓ Microservice Endpoint Trigger</div>
 
-          <div style="color:var(--accent-indigo); font-weight:700;"><i class="fas fa-cloud-sun"></i> 2. WEATHERAPI RESTFUL SERVICE INTEGRATION</div>
+          <div style="color:var(--accent-indigo); font-weight:700;"><i class="fas fa-server"></i> 2. FLASK RESTFUL API & AUTHENTICATION</div>
           <div style="padding-left:1.5rem; color:var(--text-secondary); font-size:0.82rem;">
-            • Fetches real-time temperature, humidity, wind velocity, and 5-day forecasts<br>
-            • Parses JSON payloads with dynamic error fallback handling
+            • /predict_home_price API returning real-time property valuation<br>
+            • Secure Session & SQLite User Authentication for saved valuation history
           </div>
 
-          <div style="padding-left:1.5rem; color:var(--text-muted);">↓ Triggers DOM Animation State</div>
+          <div style="padding-left:1.5rem; color:var(--text-muted);">↓ Financial & Infra Analytics Pipelines</div>
 
-          <div style="color:var(--accent-emerald); font-weight:700;"><i class="fas fa-wand-magic-sparkles"></i> 3. DYNAMIC WEATHER ANIMATIONS & THEME PIPELINE</div>
+          <div style="color:var(--accent-emerald); font-weight:700;"><i class="fas fa-calculator"></i> 3. DUAL-CURRENCY (INR/USD) & 20-YR LOAN EMI ENGINE</div>
           <div style="padding-left:1.5rem; color:var(--text-secondary); font-size:0.82rem;">
-            • Renders weather-specific CSS keyframe animations (Raindrops, Sun Glow, Storm clouds)<br>
-            • Updates responsive UI components dynamically
+            • Real-time exchange rate conversion (INR ⇄ USD)<br>
+            • Dynamic 20-year loan amortization schedule & EMI breakdown
+          </div>
+
+          <div style="padding-left:1.5rem; color:var(--text-muted);">↓ Infrastructure & Chatbot Modules</div>
+
+          <div style="color:var(--accent-amber); font-weight:700;"><i class="fas fa-robot"></i> 4. PUBLIC INFRASTRUCTURE MAPPING & META AI CHATBOT</div>
+          <div style="padding-left:1.5rem; color:var(--text-secondary); font-size:0.82rem;">
+            • Maps nearest Hospitals, Namma Metro Stations, BMTC Bus Stops, and BLR Airport<br>
+            • WhatsApp-style Meta AI Assistant chatbot for real estate query resolution
           </div>
         </div>
       `
