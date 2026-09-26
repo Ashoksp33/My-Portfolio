@@ -37,7 +37,7 @@
 
       <div class="nav-actions">
         <!-- TOP-RIGHT RESUME BUTTON (OPENS Ashok_Gowda_S_P_Resume.pdf DIRECTLY IN NEW TAB) -->
-        <a href="Ashok_Gowda_S_P_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+        <a href="Ashok_Gowda_S_P_Resume.pdf?v=latest" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
           <i class="fas fa-file-pdf"></i> Resume.pdf
         </a>
       </div>
@@ -113,7 +113,7 @@
     <div class="tech-tabs">
       <button class="tab-btn active" data-filter="all">All Stack</button>
       <button class="tab-btn" data-filter="languages">Languages</button>
-      <button class="tab-btn" data-filter="frameworks">Frameworks & AI</button>
+      <button class="tab-btn" data-filter="frameworks">Frameworks & Security</button>
       <button class="tab-btn" data-filter="databases">Databases</button>
       <button class="tab-btn" data-filter="tools">Tools & OpenAPI</button>
     </div>
@@ -140,46 +140,39 @@
         <p class="tech-desc">ORM Entity Mapping, Pagination, Sorting, DTO Mapping, Pageable Queries</p>
       </div>
 
-      <!-- RAG Fundamentals -->
-      <div class="tech-card fade-in-up" data-category="frameworks">
-        <div class="tech-icon" style="color:var(--accent-emerald);"><i class="fas fa-brain"></i></div>
-        <h3 class="tech-title">RAG Fundamentals & AI</h3>
-        <p class="tech-desc">Retrieval-Augmented Generation, Meta AI Chatbots, Prompt Engineering</p>
-      </div>
-
-      <!-- MySQL & PostgreSQL -->
+      <!-- SQL / MySQL -->
       <div class="tech-card fade-in-up" data-category="databases">
         <div class="tech-icon"><i class="fas fa-database"></i></div>
-        <h3 class="tech-title">MySQL & PostgreSQL</h3>
-        <p class="tech-desc">Relational Schema Design, PreparedStatements, Indexing, Complex Queries</p>
+        <h3 class="tech-title">MySQL & SQL</h3>
+        <p class="tech-desc">Relational Schema Design, PreparedStatements, Indexing, CRUD Operations</p>
       </div>
 
-      <!-- MongoDB & SQLite -->
-      <div class="tech-card fade-in-up" data-category="databases">
-        <div class="tech-icon"><i class="fas fa-server"></i></div>
-        <h3 class="tech-title">MongoDB & SQLite</h3>
-        <p class="tech-desc">NoSQL Document Collections, Lightweight Embedded DBs & Aggregations</p>
-      </div>
-
-      <!-- Python & ML -->
+      <!-- Python -->
       <div class="tech-card fade-in-up" data-category="languages">
         <div class="tech-icon"><i class="fab fa-python"></i></div>
-        <h3 class="tech-title">Python & Scikit-Learn</h3>
-        <p class="tech-desc">Pandas, NumPy, Scikit-Learn Valuation Models, Flask Web REST APIs, LSTM</p>
+        <h3 class="tech-title">Python</h3>
+        <p class="tech-desc">Data Preprocessing with Pandas, Flask Microservices, LSTM Deep Learning</p>
       </div>
 
       <!-- JavaScript & Web -->
       <div class="tech-card fade-in-up" data-category="languages">
         <div class="tech-icon"><i class="fab fa-js"></i></div>
-        <h3 class="tech-title">JavaScript (ES6+) & Web</h3>
-        <p class="tech-desc">HTML5, CSS3, DOM Manipulation, Async Fetch API, Dual-Currency Converters</p>
+        <h3 class="tech-title">JavaScript & HTML5/CSS3</h3>
+        <p class="tech-desc">Async Fetch API, REST Integration, WeatherAPI, Dynamic UI Animations</p>
       </div>
 
-      <!-- Tools -->
+      <!-- MongoDB -->
+      <div class="tech-card fade-in-up" data-category="databases">
+        <div class="tech-icon"><i class="fas fa-server"></i></div>
+        <h3 class="tech-title">MongoDB</h3>
+        <p class="tech-desc">NoSQL Document Collections & Aggregation</p>
+      </div>
+
+      <!-- Swagger / OpenAPI & Postman -->
       <div class="tech-card fade-in-up" data-category="tools">
         <div class="tech-icon"><i class="fas fa-vial"></i></div>
         <h3 class="tech-title">Swagger (OpenAPI) & Postman</h3>
-        <p class="tech-desc">API Endpoint Documentation, DTO Validation (@Valid), Global Exception Handling, Git/GitHub</p>
+        <p class="tech-desc">API Endpoint Documentation, Input Validation (@Valid), Global Exception Handling, Git/GitHub</p>
       </div>
     </div>
   </section>
@@ -195,7 +188,7 @@
         <span class="project-tag">Spring Boot + JWT Security</span>
         <h3 class="project-title">Employee Management System with JWT Auth</h3>
         <p class="project-desc">
-          Architected a secure RESTful Employee Management System using Spring Boot, Spring Security, JWT, Spring Data JPA, Hibernate, and MySQL. Features CRUD operations, pagination, sorting, searching, DTO mapping, input validation, global exception handling, and Swagger (OpenAPI) documentation.
+          Developed a secure Employee Management System with role-based authentication using JWT. Implemented features such as pagination, sorting, searching, input validation, global exception handling, and API documentation using Swagger (OpenAPI).
         </p>
 
         <div class="tech-pills">
@@ -213,36 +206,34 @@
           <button class="btn btn-primary trigger-arch-modal" data-project="jwt-auth-system">
             <i class="fas fa-sitemap"></i> View Architecture
           </button>
-          <a href="https://github.com/Ashoksp33/My-Portfolio" target="_blank" rel="noopener noreferrer" class="btn btn-github" style="font-size:0.85rem; padding:0.5rem 1rem;">
+          <a href="https://github.com/imashoksp/Employee-Management-System-with-JWT-Authentication" target="_blank" rel="noopener noreferrer" class="btn btn-github" style="font-size:0.85rem; padding:0.5rem 1rem;">
             <i class="fab fa-github"></i> Repository
           </a>
         </div>
       </div>
 
-      <!-- Project 2: Bengaluru House Price Prediction System -->
+      <!-- Project 2: SkyCast Real-Time Weather Forecasting Platform -->
       <div class="project-card fade-in-up">
-        <span class="project-tag">ML Real Estate Infrastructure</span>
-        <h3 class="project-title">Bengaluru House Price Prediction System</h3>
+        <span class="project-tag">REST API + Dynamic UI</span>
+        <h3 class="project-title">SkyCast – Weather Forecasting Platform</h3>
         <p class="project-desc">
-          Developed an end-to-end ML-powered Real Estate Valuation Platform across 240+ Bengaluru locations using Python, Flask, Scikit-Learn, Pandas, NumPy, and SQLite. Features dual-currency conversion (INR/USD), 20-year loan EMI calculators, public infrastructure mapping (Hospitals, Namma Metro, BMTC, BLR Airport), saved valuations CRUD operations, and an interactive WhatsApp-style Meta AI Assistant chatbot.
+          Developed a responsive weather forecasting web application that fetches real-time weather data using WeatherAPI REST endpoints. Features dynamic weather-based animations, geolocation support, responsive UI, and interactive theme management.
         </p>
 
         <div class="tech-pills">
-          <span class="pill">Python</span>
-          <span class="pill">Flask</span>
-          <span class="pill">Scikit-Learn</span>
-          <span class="pill">Pandas</span>
-          <span class="pill">NumPy</span>
-          <span class="pill">SQLite</span>
+          <span class="pill">HTML5</span>
+          <span class="pill">CSS3</span>
           <span class="pill">JavaScript</span>
-          <span class="pill">Meta AI Chatbot</span>
+          <span class="pill">WeatherAPI</span>
+          <span class="pill">Geolocation API</span>
+          <span class="pill">REST API</span>
         </div>
 
         <div class="project-actions">
-          <button class="btn btn-primary trigger-arch-modal" data-project="bengaluru-house-price">
+          <button class="btn btn-primary trigger-arch-modal" data-project="skycast">
             <i class="fas fa-sitemap"></i> View Architecture
           </button>
-          <a href="https://github.com/Ashoksp33/My-Portfolio" target="_blank" rel="noopener noreferrer" class="btn btn-github" style="font-size:0.85rem; padding:0.5rem 1rem;">
+          <a href="https://github.com/imashoksp/SkyCast-Real-Time-Weather-Forecasting-Platform" target="_blank" rel="noopener noreferrer" class="btn btn-github" style="font-size:0.85rem; padding:0.5rem 1rem;">
             <i class="fab fa-github"></i> Repository
           </a>
         </div>
@@ -267,7 +258,7 @@
           <button class="btn btn-primary trigger-arch-modal" data-project="stock-prediction">
             <i class="fas fa-sitemap"></i> View Architecture
           </button>
-          <a href="https://github.com/Ashoksp33/My-Portfolio" target="_blank" rel="noopener noreferrer" class="btn btn-github" style="font-size:0.85rem; padding:0.5rem 1rem;">
+          <a href="https://github.com/imashoksp/Stock-Market-Prediction" target="_blank" rel="noopener noreferrer" class="btn btn-github" style="font-size:0.85rem; padding:0.5rem 1rem;">
             <i class="fab fa-github"></i> Repository
           </a>
         </div>
@@ -299,7 +290,7 @@
           <div class="timeline-date">2023</div>
           <h3 class="timeline-title">Hoysala PU College, Nelamangala</h3>
           <div class="timeline-org">Class XII (Pre-University Education)</div>
-          <span class="timeline-score">Score: 89%</span>
+          <span class="timeline-score">Score: 90%</span>
         </div>
       </div>
 
